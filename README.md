@@ -1,6 +1,6 @@
 # ktx ☸️
 
-A simple, production-ready CLI tool to easily switch Kubernetes contexts. ⚡️
+A simple, production-ready CLI tool to easily switch Kubernetes contexts.
 
 [![asciicast](https://asciinema.org/a/723307.svg)](https://asciinema.org/a/723307)
 
@@ -8,10 +8,10 @@ A simple, production-ready CLI tool to easily switch Kubernetes contexts. ⚡️
 - List and switch between Kubernetes contexts interactively 
 - Built with Cobra, Viper, and Survey for a great CLI experience
 
-## Supported Platforms 🖥️
-- 🐧 Linux (amd64, arm64)
-- 🍏 macOS (amd64, arm64)
-- 🪟 Windows (amd64)
+## Supported Platforms 
+- Linux (amd64, arm64)
+- macOS (amd64, arm64)
+- Windows (amd64)
 
 ## Installation 
 
