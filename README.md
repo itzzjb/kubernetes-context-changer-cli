@@ -37,7 +37,7 @@ A simple, production-ready CLI tool to easily switch Kubernetes contexts.
 # Download and install (Linux/macOS)
 wget https://github.com/itzzjb/kubernetes-context-changer-cli/releases/latest/download/ktx-<os>-<arch>
 chmod +x ./ktx-<os>-<arch>
-sudo mv ./ktx-<os>-<arch> /usr/local/bin/ktx
+sudo mv ./ktx-<os>-<arch> /usr/local/bin
 ktx
 ```
 
@@ -80,6 +80,7 @@ ktx
    ```sh
    ktx
    ```
+> [!NOTE]
 > - You can also run the tool by double-clicking `ktx.exe`, but it is designed for interactive use in a terminal.
 > - Make sure your `KUBECONFIG` environment variable is set if your kubeconfig is not in the default location (`%USERPROFILE%\.kube\config`).
 
