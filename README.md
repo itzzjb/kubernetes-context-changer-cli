@@ -2,75 +2,52 @@
 
 A simple, production-ready CLI tool to easily switch Kubernetes contexts.
 
-- Fast, interactive context selection
-- Works with any kubeconfig
-- User-friendly terminal prompts
-- Supports Linux, macOS, and Windows
-
----
-
 ## Features
-
 - List and switch between Kubernetes contexts interactively
 - Built with Cobra, Viper, and Survey for a great CLI experience
-- Colorful terminal output
-- Cross-platform support (amd64/arm64 for Linux/macOS, amd64 for Windows)
-
----
-
-## Installation
-
-### Download a Release
-
-Go to the [Releases](https://github.com/itzzjb/kubernetes-context-changer-cli/releases) page and download the appropriate binary for your OS and architecture:
-
-- `ktx-linux-amd64`, `ktx-linux-arm64`
-- `ktx-darwin-amd64`, `ktx-darwin-arm64` (macOS Intel/Apple Silicon)
-- `ktx-windows-amd64.exe`
-
-Make it executable (Linux/macOS):
-```sh
-chmod +x ./ktx-<os>-<arch>
-```
-
-Rename the binary to `ktx`:
-```sh
-mv ./ktx-<os>-<arch> ktx
-```
-
-Move it to a directory in your `$PATH`, e.g.:
-```sh
-sudo mv ./ktx /usr/local/bin
-```
-
-### Build from Source
-
-Requires Go 1.18+:
-```sh
-git clone https://github.com/itzzjb/kubernetes-context-changer-cli.git
-cd kubernetes-context-changer-cli
-go build -o ktx
-chmod +x ./ktx
-sudo mv ./ktx /usr/local/bin
-```
-
----
-
-## Usage
-
-```sh
-ktx
-```
-
-- Run `ktx` to interactively select a context.
-- Or specify a context name directly: `ktx my-context`
-
----
 
 ## Supported Platforms
 - Linux (amd64, arm64)
 - macOS (amd64, arm64)
 - Windows (amd64)
+
+## Installation
+
+### Mac / Linux
+1. Download the binary for your OS from the [Releases](https://github.com/itzzjb/kubernetes-context-changer-cli/releases) page.
+2. Make it executable and move to your PATH:
+   ```sh
+   chmod +x ./ktx-<os>-<arch>
+   mv ./ktx-<os>-<arch> ktx
+   sudo mv ./ktx /usr/local/bin
+   ```
+3. Or build from source (requires Go 1.18+):
+   ```sh
+   git clone https://github.com/itzzjb/kubernetes-context-changer-cli.git
+   cd kubernetes-context-changer-cli
+   go build -o ktx
+   sudo mv ./ktx /usr/local/bin
+   ```
+4. Run `ktx` to verify installation:
+   ```sh
+   ktx
+   ```
+
+
+### Windows
+1. Download `ktx-windows-amd64.exe` from [Releases](https://github.com/itzzjb/kubernetes-context-changer-cli/releases).
+2. (Optional) Rename to `ktx.exe`.
+3. Add the folder containing `ktx.exe` to your system `PATH`.
+4. Run from Command Prompt or PowerShell:
+   ```sh
+   ktx
+   ```
+
+#### Notes
+- As long as `ktx.exe` is in your `PATH`, you do not need to type the `.exe` extension—just use `ktx`.
+- If you are running from the current directory and it's not in your `PATH`, use `./ktx` or `./ktx.exe`.
+- You can also run the tool by double-clicking `ktx.exe`, but it is designed for interactive use in a terminal.
+- Make sure your `KUBECONFIG` environment variable is set if your kubeconfig is not in the default location (`%USERPROFILE%\.kube\config`).
 
 ---
 
