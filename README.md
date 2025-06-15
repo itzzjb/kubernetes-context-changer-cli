@@ -56,11 +56,11 @@ A simple, production-ready CLI tool to easily switch Kubernetes contexts.
    ktx
    ```
 
-#### Notes 
-- As long as `ktx.exe` is in your `PATH`, you do not need to type the `.exe` extension—just use `ktx`.
-- If you are running from the current directory and it's not in your `PATH`, use `./ktx` or `./ktx.exe`.
-- You can also run the tool by double-clicking `ktx.exe`, but it is designed for interactive use in a terminal.
-- Make sure your `KUBECONFIG` environment variable is set if your kubeconfig is not in the default location (`%USERPROFILE%\.kube\config`).
+> [!NOTE]
+> - As long as `ktx.exe` is in your `PATH`, you do not need to type the `.exe` extension—just use `ktx`.
+> - If you are running from the current directory and it's not in your `PATH`, use `./ktx` or `./ktx.exe`.
+> - You can also run the tool by double-clicking `ktx.exe`, but it is designed for interactive use in a terminal.
+> - Make sure your `KUBECONFIG` environment variable is set if your kubeconfig is not in the default location (`%USERPROFILE%\.kube\config`).
 
 ---
 
