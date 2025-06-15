@@ -1,2 +1,3 @@
 # kubernetes-context-changer-cli
-Kubernets context changes using golang
+
+A simple CLI tool to change the current Kubernetes context.
