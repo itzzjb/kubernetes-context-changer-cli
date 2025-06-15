@@ -24,6 +24,7 @@ A simple, production-ready CLI tool to easily switch Kubernetes contexts.
 ---
 
 ## Features
+- 🟢 **Simple**: Easy to install, use, and understand. The codebase is straightforward and beginner-friendly.
 - 🚀 **Interactive context switching**: Quickly list and switch between Kubernetes contexts in your kubeconfig.
 - 🛠️ **Cross-platform**: Supports Linux, macOS, and Windows.
 - ⚡ **Fast and lightweight**: Built with Go, Cobra, Viper, and Survey for a seamless CLI experience.
