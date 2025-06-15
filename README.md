@@ -18,16 +18,26 @@ A simple, production-ready CLI tool to easily switch Kubernetes contexts.
 2. Make it executable and move to your PATH:
    ```sh
    chmod +x ./ktx-<os>-<arch>
+   ```
+   ```sh
    mv ./ktx-<os>-<arch> ktx
+   ```
+   ```sh
    sudo mv ./ktx /usr/local/bin
    ```
 3. Or build from source (requires Go 1.18+):
    ```sh
    git clone https://github.com/itzzjb/kubernetes-context-changer-cli.git
-   cd kubernetes-context-changer-cli
-   go build -o ktx
-   sudo mv ./ktx /usr/local/bin
    ```
+   ```sh
+   cd kubernetes-context-changer-cli
+   ```
+   ```sh
+   go build -o ktx
+   ```
+   ```sh
+   sudo mv ./ktx /usr/local/bin
+   ```se
 4. Run `ktx` to verify installation:
    ```sh
    ktx
