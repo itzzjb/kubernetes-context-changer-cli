@@ -17,7 +17,7 @@ import (
 // Usage: ktx [flags] [commands]
 
 // version is set at build-time via -ldflags (default: v0.1.0)
-var version = "v0.1.0"
+var version = "v1.0.0"
 
 func main() {
 	rootCmd := &cobra.Command{
