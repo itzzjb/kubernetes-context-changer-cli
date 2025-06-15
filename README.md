@@ -71,13 +71,13 @@ When running `ktx` for the first time on macOS, you may see a security warning.
 > **Apple cannot verify this app for malicious software**
 >
 > This is standard for open source CLI tools not distributed via the Mac App Store.
-
-**Solution:**
-1. Right-click the `ktx` binary and choose **Open**. Click **OK** in the dialog. You only need to do this once per version.
-2. Or, if you see a quarantine error, run:
-   ```sh
-   xattr -d com.apple.quarantine ./ktx
-   ```
+>
+> **Solution:**
+> 1. Right-click the `ktx` binary and choose **Open**. Click **OK** in the dialog. You only need to do this once per version.
+> 2. Or, if you see a quarantine error, run:
+>    ```sh
+>    xattr -d com.apple.quarantine ./ktx
+>    ```
 
 ---
 
