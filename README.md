@@ -5,8 +5,8 @@ A simple, production-ready CLI tool to easily switch Kubernetes contexts. ⚡️
 [![asciicast](https://asciinema.org/a/723307.svg)](https://asciinema.org/a/723307)
 
 ## Features 
-- List and switch between Kubernetes contexts interactively 🔄
-- Built with Cobra, Viper, and Survey for a great CLI experience 🐍🐍🐍
+- List and switch between Kubernetes contexts interactively 
+- Built with Cobra, Viper, and Survey for a great CLI experience
 
 ## Supported Platforms 🖥️
 - 🐧 Linux (amd64, arm64)
