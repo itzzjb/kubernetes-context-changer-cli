@@ -1,21 +1,21 @@
-# ktx
+# ktx ☸️
 
-A simple, production-ready CLI tool to easily switch Kubernetes contexts.
+A simple, production-ready CLI tool to easily switch Kubernetes contexts. ⚡️
 
 [![asciicast](https://asciinema.org/a/723307.svg)](https://asciinema.org/a/723307)
 
-## Features
-- List and switch between Kubernetes contexts interactively
-- Built with Cobra, Viper, and Survey for a great CLI experience
+## Features 
+- List and switch between Kubernetes contexts interactively 🔄
+- Built with Cobra, Viper, and Survey for a great CLI experience 🐍🐍🐍
 
-## Supported Platforms
-- Linux (amd64, arm64)
-- macOS (amd64, arm64)
-- Windows (amd64)
+## Supported Platforms 🖥️
+- 🐧 Linux (amd64, arm64)
+- 🍏 macOS (amd64, arm64)
+- 🪟 Windows (amd64)
 
-## Installation
+## Installation 
 
-### Mac / Linux
+### Mac / Linux 
 1. Download the binary for your OS from the [Releases](https://github.com/itzzjb/kubernetes-context-changer-cli/releases) page.
 2. Make it executable and move to your PATH:
    ```sh
@@ -46,7 +46,7 @@ A simple, production-ready CLI tool to easily switch Kubernetes contexts.
    ```
 
 
-### Windows
+### Windows 
 1. Download `ktx-windows-amd64.exe` from [Releases](https://github.com/itzzjb/kubernetes-context-changer-cli/releases).
 2. Rename to `ktx.exe`.
 3. Add the folder containing `ktx.exe` to your system `PATH`.
@@ -55,7 +55,7 @@ A simple, production-ready CLI tool to easily switch Kubernetes contexts.
    ktx
    ```
 
-#### Notes
+#### Notes 
 - As long as `ktx.exe` is in your `PATH`, you do not need to type the `.exe` extension—just use `ktx`.
 - If you are running from the current directory and it's not in your `PATH`, use `./ktx` or `./ktx.exe`.
 - You can also run the tool by double-clicking `ktx.exe`, but it is designed for interactive use in a terminal.
@@ -63,7 +63,7 @@ A simple, production-ready CLI tool to easily switch Kubernetes contexts.
 
 ---
 
-## macOS: Security Notice
+## macOS: Security Notice 
 
 When running `ktx` for the first time on macOS, you may see:
 > "Apple cannot verify this app for malicious software"
@@ -79,12 +79,12 @@ This is standard for open source CLI tools not distributed via the Mac App Store
 
 ---
 
-## Contributing
+## Contributing 
 
 Pull requests and issues are welcome! Please open an issue to discuss your ideas or report bugs.
 
 ---
 
-## License
+## License 
 
 License. See [LICENSE](LICENSE) for details.
