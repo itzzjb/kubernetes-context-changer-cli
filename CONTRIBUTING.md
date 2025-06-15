@@ -1,1 +1,0 @@
-All Contributors are welcome 😄
