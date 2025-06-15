@@ -119,7 +119,7 @@ ktx <context-name>
 
 - **macOS Security Warning:**
   When running `ktx` for the first time on macOS, you may see a security warning.
-  
+
 > [!CAUTION]
 > **Apple cannot verify this app for malicious software**
 >
@@ -143,12 +143,15 @@ ktx <context-name>
 ## FAQ
 
 **Q: Does `ktx` modify my kubeconfig?**
+
 A: `ktx` only switches the current context; it does not modify or delete clusters, users, or contexts.
 
 **Q: Can I use `ktx` with multiple kubeconfig files?**
+
 A: Yes, set the `KUBECONFIG` environment variable before running `ktx`.
 
 **Q: Is telemetry or analytics collected?**
+
 A: No, `ktx` does not collect or send any telemetry data.
 
 ---
