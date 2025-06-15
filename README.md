@@ -36,7 +36,7 @@ A simple, production-ready CLI tool to easily switch Kubernetes contexts.
 
 ### Windows
 1. Download `ktx-windows-amd64.exe` from [Releases](https://github.com/itzzjb/kubernetes-context-changer-cli/releases).
-2. (Optional) Rename to `ktx.exe`.
+2. Rename to `ktx.exe`.
 3. Add the folder containing `ktx.exe` to your system `PATH`.
 4. Run from Command Prompt or PowerShell:
    ```sh
