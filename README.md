@@ -1,7 +1,6 @@
 # ktx ☸️
 
 [![GitHub release](https://img.shields.io/github/v/release/itzzjb/kubernetes-context-changer-cli)](https://github.com/itzzjb/kubernetes-context-changer-cli/releases)
-[![GitHub issues](https://img.shields.io/github/issues/itzzjb/kubernetes-context-changer-cli)](https://github.com/itzzjb/kubernetes-context-changer-cli/issues)
 [![GitHub license](https://img.shields.io/github/license/itzzjb/kubernetes-context-changer-cli)](LICENSE)
 
 A simple, production-ready CLI tool to easily switch Kubernetes contexts.
