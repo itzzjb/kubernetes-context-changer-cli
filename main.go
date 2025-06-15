@@ -3,7 +3,6 @@ package main
 import (
 	"os"
 	"path/filepath"
-	"strings"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/fatih/color"
@@ -104,25 +103,18 @@ func runKtx(cmd *cobra.Command, args []string) {
 	// 3. Interactive: prompt user
 	selected := ""
 	promptOptions := make([]string, 0, len(contexts))
-	for _, ctx := range contexts {
-		if ctx == config.CurrentContext {
-			promptOptions = append(promptOptions, color.New(color.FgGreen, color.Bold).Sprint(ctx+" (current)"))
-		} else {
-			promptOptions = append(promptOptions, ctx)
-		}
-	}
+	promptOptions = append(promptOptions, contexts...)
 	prompt := &survey.Select{
 		Message: "Choose a Kubernetes context:",
 		Options: promptOptions,
-		Default: color.New(color.FgGreen, color.Bold).Sprint(config.CurrentContext+" (current)"),
+		Default: config.CurrentContext,
 	}
 	err = survey.AskOne(prompt, &selected)
 	if err != nil {
 		color.Red("Prompt failed: %v", err)
 		os.Exit(6)
+
 	}
-	// Remove (current) and color codes for comparison
-	selected = stripContextName(selected)
 	if selected == config.CurrentContext {
 		color.Cyan("'%s' is already the current context.", selected)
 		return
@@ -177,18 +169,15 @@ func resolveKubeconfigPath() string {
 // getContextNames returns all context names from kubeconfig
 func getContextNames(config *clientcmdapi.Config) []string {
 	contexts := make([]string, 0, len(config.Contexts))
-	for name := range config.Contexts {
-		contexts = append(contexts, name)
-	}
+	contexts = append(contexts, getMapKeys(config.Contexts)...)
 	return contexts
 }
 
-// stripContextName removes color and (current) marker for comparison
-func stripContextName(s string) string {
-	// Remove (current) and any color codes
-	plain := s
-	plain = strings.ReplaceAll(plain, " (current)", "")
-	plain = color.New().SprintFunc()(plain) // Remove color
-	return plain
+// getMapKeys returns the keys of a map[string]*clientcmdapi.Context as a slice of strings
+func getMapKeys(m map[string]*clientcmdapi.Context) []string {
+	keys := make([]string, 0, len(m))
+	for k := range m {
+		keys = append(keys, k)
+	}
+	return keys
 }
-
