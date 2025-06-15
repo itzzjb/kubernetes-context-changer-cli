@@ -31,17 +31,14 @@ func main() {
 Usage:
   ktx                 # interactive mode
   ktx <context>       # switch to context directly
-  ktx -c <context>    # switch to context directly (flag, legacy)
   ktx list            # list all contexts
   ktx version         # show version
 `,
 	}
 
-	// Add --context flag for non-interactive switching (legacy/optional)
-	rootCmd.Flags().StringP("context", "c", "", "Context to switch to (non-interactive, legacy; prefer positional argument)")
+	// Add --kubeconfig flag
 	rootCmd.Flags().StringP("kubeconfig", "k", "", "Path to the kubeconfig file")
 	viper.BindPFlag("kubeconfig", rootCmd.Flags().Lookup("kubeconfig"))
-	viper.BindPFlag("context", rootCmd.Flags().Lookup("context"))
 
 	// Version command
 	versionCmd := &cobra.Command{
@@ -103,26 +100,6 @@ func runKtx(cmd *cobra.Command, args []string) {
 		return
 	}
 
-	// 2. If --context flag is given, use it
-	flagContext := viper.GetString("context")
-	if flagContext != "" {
-		if _, ok := config.Contexts[flagContext]; !ok {
-			color.Red("Context '%s' not found.", flagContext)
-			os.Exit(4)
-		}
-		if flagContext == config.CurrentContext {
-			color.Cyan("'%s' is already the current context.", flagContext)
-			return
-		}
-		config.CurrentContext = flagContext
-		err = clientcmd.WriteToFile(*config, kubeconfigPath)
-		if err != nil {
-			color.Red("Failed to update kubeconfig: %v", err)
-			os.Exit(5)
-		}
-		color.Green("Switched to context: %s", flagContext)
-		return
-	}
 
 	// 3. Interactive: prompt user
 	selected := ""
