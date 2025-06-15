@@ -44,7 +44,7 @@ Usage:
 		Use:   "version",
 		Short: "Print the version number of ktx",
 		Run: func(cmd *cobra.Command, args []string) {
-			color.Blue("ktx version %s", version)
+			color.Blue("🔷 ktx version %s", version)
 		},
 	}
 	rootCmd.AddCommand(versionCmd)
@@ -58,7 +58,7 @@ Usage:
 	rootCmd.AddCommand(listCmd)
 
 	if err := rootCmd.Execute(); err != nil {
-		color.Red("Error: %v", err)
+		color.Red("❌ Error: %v", err)
 		os.Exit(1)
 	}
 }
@@ -82,11 +82,11 @@ func runKtx(cmd *cobra.Command, args []string) {
 	if len(args) > 0 && args[0] != "" {
 		argContext := args[0]
 		if _, ok := config.Contexts[argContext]; !ok {
-			color.Red("Context '%s' not found.", argContext)
+			color.Red("❌ Context '%s' not found.", argContext)
 			os.Exit(4)
 		}
 		if argContext == config.CurrentContext {
-			color.Cyan("'%s' is already the current context.", argContext)
+			color.Cyan("ℹ️  '%s' is already the current context.", argContext)
 			return
 		}
 		config.CurrentContext = argContext
@@ -95,7 +95,7 @@ func runKtx(cmd *cobra.Command, args []string) {
 			color.Red("Failed to update kubeconfig: %v", err)
 			os.Exit(5)
 		}
-		color.Green("Switched to context: %s", argContext)
+		color.Green("✅ Switched to context: %s", argContext)
 		return
 	}
 
@@ -105,18 +105,18 @@ func runKtx(cmd *cobra.Command, args []string) {
 	promptOptions := make([]string, 0, len(contexts))
 	promptOptions = append(promptOptions, contexts...)
 	prompt := &survey.Select{
-		Message: "Choose a Kubernetes context:",
+		Message: "🔄 Choose a Kubernetes context:",
 		Options: promptOptions,
 		Default: config.CurrentContext,
 	}
 	err = survey.AskOne(prompt, &selected)
 	if err != nil {
-		color.Red("Prompt failed: %v", err)
+		color.Red("❌ Prompt failed: %v", err)
 		os.Exit(6)
 
 	}
 	if selected == config.CurrentContext {
-		color.Cyan("'%s' is already the current context.", selected)
+		color.Cyan("ℹ️  '%s' is already the current context.", selected)
 		return
 	}
 	config.CurrentContext = selected
@@ -125,7 +125,7 @@ func runKtx(cmd *cobra.Command, args []string) {
 		color.Red("Failed to update kubeconfig: %v", err)
 		os.Exit(7)
 	}
-	color.Green("Switched to context: %s", selected)
+	color.Green("✅ Switched to context: %s", selected)
 }
 
 // runList prints all contexts, highlighting the current one
@@ -143,9 +143,9 @@ func runList(cmd *cobra.Command, args []string) {
 	}
 	for _, ctx := range contexts {
 		if ctx == config.CurrentContext {
-			color.Green("* %s (current)", ctx)
+			color.Green("* %s (current) ✅", ctx)
 		} else {
-			color.White("  %s", ctx)
+			color.White("  %s", ctx) // Not current, no emoji
 		}
 	}
 }
@@ -160,7 +160,7 @@ func resolveKubeconfigPath() string {
 	}
 	home, err := os.UserHomeDir()
 	if err != nil {
-		color.Red("Unable to determine home directory: %v", err)
+		color.Red("❌ Unable to determine home directory: %v", err)
 		os.Exit(10)
 	}
 	return filepath.Join(home, ".kube", "config")
