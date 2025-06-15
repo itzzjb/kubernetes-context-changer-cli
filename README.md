@@ -2,7 +2,7 @@
 
 A simple, production-ready CLI tool to easily switch Kubernetes contexts.
 
-![demo](https://github.com/user-attachments/assets/d2beede8-2cc6-4c7d-98c8-746dff5fcb53)
+[![asciicast](https://asciinema.org/a/paXVNjErQgbuJbFGlXCCboUHh.svg)](https://asciinema.org/a/paXVNjErQgbuJbFGlXCCboUHh)
 
 ## Features
 - List and switch between Kubernetes contexts interactively
