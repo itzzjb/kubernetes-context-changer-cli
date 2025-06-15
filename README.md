@@ -37,7 +37,7 @@ A simple, production-ready CLI tool to easily switch Kubernetes contexts.
    ```
    ```sh
    sudo mv ./ktx /usr/local/bin
-   ```se
+   ```
 4. Run `ktx` to verify installation:
    ```sh
    ktx
