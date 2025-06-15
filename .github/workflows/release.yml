@@ -37,7 +37,7 @@ jobs:
           mkdir -p dist
           EXT=""
           if [ "${{ matrix.goos }}" = "windows" ]; then EXT=".exe"; fi
-          go build -o dist/kubernetes-context-changer-cli-${{ matrix.goos }}-${{ matrix.goarch }}$EXT
+          go build -o dist/ktx-${{ matrix.goos }}-${{ matrix.goarch }}$EXT
         env:
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }}
@@ -45,6 +45,6 @@ jobs:
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/kubernetes-context-changer-cli-${{ matrix.goos }}-${{ matrix.goarch }}*
+          files: dist/ktx-${{ matrix.goos }}-${{ matrix.goarch }}*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
