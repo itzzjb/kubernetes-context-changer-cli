@@ -119,6 +119,7 @@ ktx <context-name>
 
 - **macOS Security Warning:**
   When running `ktx` for the first time on macOS, you may see a security warning.
+  
   > [!CAUTION]
   > **Apple cannot verify this app for malicious software**
   >
