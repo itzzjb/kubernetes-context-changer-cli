@@ -32,9 +32,15 @@ Make it executable (Linux/macOS):
 ```sh
 chmod +x ./ktx-<os>-<arch>
 ```
+
+Rename the binary to `ktx`:
+```sh
+mv ./ktx-<os>-<arch> ktx
+```
+
 Move it to a directory in your `$PATH`, e.g.:
 ```sh
-sudo mv ./ktx-<os>-<arch> /usr/local/bin/ktx
+sudo mv ./ktx /usr/local/bin
 ```
 
 ### Build from Source
@@ -44,6 +50,8 @@ Requires Go 1.18+:
 git clone https://github.com/itzzjb/kubernetes-context-changer-cli.git
 cd kubernetes-context-changer-cli
 go build -o ktx
+chmod +x ./ktx
+sudo mv ./ktx /usr/local/bin
 ```
 
 ---
@@ -51,7 +59,7 @@ go build -o ktx
 ## Usage
 
 ```sh
-ktx [context]
+ktx
 ```
 
 - Run `ktx` to interactively select a context.
